@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.main-banner {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.unsubscribe-section {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+}
+
+.unsubscribe-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.unsubscribe-section form {
+    display: inline-block;
+}
+
+.unsubscribe-section button {
+    background-color: #d9534f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.unsubscribe-section button:hover {
+    background-color: #c9302c;
+}

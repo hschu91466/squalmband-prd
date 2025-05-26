@@ -1,0 +1,48 @@
+@import "navbar.css";
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Sticky Header */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 1000;
+  text-align: center;
+}
+
+/* Grid Main Layout */
+main {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Example for 3 columns. Adjust as needed */
+  gap: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+section {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-height: 70vh;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}

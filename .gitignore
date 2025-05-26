@@ -1,0 +1,10 @@
+# .gitignore
+.archive
+squalm_tree.txt
+email_errors.log
+*.log*
+.bak
+*.tmp
+vendor/
+.env
+.htpasswd

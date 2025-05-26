@@ -1,0 +1,476 @@
+@import "index.css";
+@import "navbar.css";
+@import "videobg.css";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--secondary-font);
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth !important;
+  height: 100vh;
+}
+
+body {
+  font-family: var(--secondary-font);
+  background-color: transparent !important;
+}
+
+header {
+  background: var(--primary-dark-gradcolor);
+  color: var(--primary-light-color);
+  font-family: var(--main-font);
+  position: sticky;
+  top: 0;
+  min-width: 100%;
+  z-index: 1000;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  /* Full viewport height */
+  padding-top: var(--main-banner-height);
+  position: relative;
+}
+
+.music-container,
+.video-container,
+.news-container,
+.tour-container,
+.contact-container {
+  display: flex;
+}
+
+.intro {
+  background: var(--primary-dark-gradcolor);
+  color: var(--primary-light-color);
+}
+
+.music,
+.video,
+.news,
+.tour,
+.contactus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.articles {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.article {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.video-container,
+.featured-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.video-container > * .featured-container > * {
+  flex: 1 1 calc(50% - 20px);
+  /* Two items per row with gap */
+  box-sizing: border-box;
+}
+
+.video {
+  background: rgba(51, 49, 70, 0.7);
+  color: var(--primary-light-color);
+}
+
+.featured-text {
+  display: flex;
+  justify-content: center;
+  margin: 3em;
+  position: relative;
+  bottom: -100px;
+}
+
+.featured-video {
+  display: flex;
+  margin: 3em;
+  position: relative;
+  bottom: -120px;
+  transform: scale(0.75);
+}
+
+.hide,
+.hidden {
+  display: none;
+}
+
+#read-more,
+#read-less {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.video-featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(100, 58, 107, 1);
+  color: var(--primary-light-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.newest-video {
+  background: var(--primary-medium-color);
+  color: var(--primary-light-color);
+}
+
+.social-media {
+  background: rgba(26, 172, 250, 0.7);
+  color: var(--primary-dark-color);
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.social {
+  margin: 0 5em !important;
+}
+
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social a {
+  margin: 0 10px;
+  /* Adjust spacing between social media buttons */
+}
+
+.fa-snapchat {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+input.signup {
+  padding: 10px 14px;
+  margin: 20px;
+  border-radius: 20px;
+  width: 350px;
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1em;
+  font-weight: 200;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.sending-message {
+  display: none;
+  color: blue;
+  margin-left: 2em;
+  font-weight: bold;
+  animation: fadeInOut 2s infinite, colorChange 6s infinite;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: blue;
+  }
+  33% {
+    color: red;
+  }
+  66% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.button {
+  padding: 0 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.music {
+  background: var(--primary-medium-color);
+  color: var(--primary-light-color);
+}
+
+.aboutus {
+  background: rgba(26, 172, 250, 0.7);
+  color: var(--primary-dark-color);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  background: rgb(154, 141, 138, 0.7);
+  border: 1px solid rgba(51, 49, 70, 1);
+  box-shadow: 10px 10px 5px rgba(51, 49, 70, 1);
+  border-radius: 20px;
+}
+
+.contact-info input[type="text"],
+.contact-info input[type="email"],
+.contact-info textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.contact-info button {
+  width: 100%;
+  background: var(--primary-dark-gradcolor);
+  color: var(--primary-light-color);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contactus {
+  background: rgba(51, 49, 70, 0.7);
+  color: var(--primary-dark-color);
+}
+
+.tour {
+  background: var(--primary-medium-color);
+  color: var(--primary-light-color);
+}
+
+.tour-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  background-color: rgba(51, 49, 70, 0.7);
+  border: 1px solid rgba(51, 49, 70, 1);
+  box-shadow: 10px 10px 5px rgba(51, 49, 70, 1);
+  top: 100px;
+}
+
+.tour-container table {
+  color: var(--primary-light-color);
+  margin: auto 1.5em;
+}
+
+.music-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.music-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-container {
+  flex-direction: column;
+}
+
+.news {
+  gap: 20px;
+  background: rgba(26, 172, 250, 0.7);
+  color: var(--primary-light-color);
+  border: 1px solid rgba(51, 49, 70, 1);
+}
+
+.form-group {
+  min-width: 50vw;
+  color: var(--primary-dark-color);
+  text-align: left;
+}
+
+.form-group label {
+  margin: 0.5em 0 0 0.5em;
+}
+
+.form-group input {
+  margin-top: 0;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  padding-left: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 5px;
+  /* Space between checkbox and label */
+}
+
+.checkbox-container label {
+  margin-left: 0;
+  margin-bottom: 0;
+  /* Remove any default margin */
+}
+
+.email-sent {
+  background: var(--primary-medium-color);
+  color: var(--primary-light-color);
+}
+
+.footer {
+  background: url(../img/paper-thin-header.png) repeat center center fixed;
+  color: var(--primary-light-color);
+  min-height: 10vh;
+}
+
+@media (min-width: 768px) {
+  #short-text {
+    display: none;
+  }
+
+  #full-text {
+    display: block;
+  }
+
+  #read-more {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .video-container {
+    flex-direction: column;
+  }
+
+  .aboutus-container {
+    flex-direction: column;
+  }
+
+  .tour-container {
+    flex-direction: column;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  header h1 {
+    font-size: 1em;
+  }
+
+  .social-media {
+    padding: 2px;
+  }
+
+  .social {
+    margin: 0 !important;
+  }
+
+  .social a {
+    margin: 0 2px;
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .intro-container,
+  .articles,
+  .social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+  }
+
+  .featured-text {
+    text-align: justify;
+    margin: 1em 0 4em 0;
+  }
+
+  .featured-text h3 {
+    font-size: 0.5em;
+  }
+
+  .featured-video {
+    position: relative;
+    bottom: 25px;
+    margin: 0;
+  }
+
+  .music-container,
+  .video-container,
+  .tour-container,
+  .news-container {
+    flex-direction: column;
+  }
+
+  .tour-container {
+    padding: 20px;
+    top: 0;
+  }
+
+  .video {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+}

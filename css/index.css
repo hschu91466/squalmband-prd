@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Noto+Music&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+:root {
+  --main-font: "Architects Daughter", cursive;
+  --secondary-font: "Montserrat", cursive;
+  --music-notes: "Noto Music", sans-serif;
+  /* To use music notes you must have num lock on.  
+  Click on the Alt key and select a number. */
+
+  --primary-dark-color: rgba(31, 29, 54, 1);
+  --primary-dark-gradcolor: rgba(31, 29, 54, 0.7);
+  --secondary-dark-color: rgba(63, 51, 81, 1);
+  --primary-medium-color: rgba(95, 38, 74, 0.95);
+  --primary-medium-ocolor: rgba(95, 38, 74, 0.7);
+  --secondary-medium-color: rgba(100, 58, 107, 0.7);
+  --dark-gray-color: rgb(16, 16, 18);
+  --medium-gray-color: rgba(173, 173, 170, 1);
+  --light-gray-color: rgba(245, 245, 245, 0.7);
+  --black-color: rgb(1, 1, 1);
+  --primary-light-color: rgb(245, 245, 220);
+  --secondary-light-color: rgb(245, 245, 245);
+  --high-light-color: rgb(88, 64, 200);
+  --accent-color-2: rgb(242, 206, 58);
+  --accent-color-3: rgb(80, 185, 187);
+}
+
+* {
+  scroll-behavior: smooth !important;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.8em;
+}
+
+h6 {
+  font-size: 0.7em;
+}
+
+.main-banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  min-height: calc(100vh - var(--main-banner-height));
+}
+
+.section-content {
+  padding-top: 40px;
+  margin: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
+
+@media (max-width: 1023px) {}
+
+@media (max-width: 767px) {}

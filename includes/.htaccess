@@ -1,0 +1,10 @@
+
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW PWPROTECTID:UKQGVl8GKd
+AuthType Basic
+AuthName "Restricted Access"
+AuthUserFile /home/u371076943/domains/squalmband.com/public_html/includes/.htpasswd
+Require valid-user
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE UKQGVl8GKd:PWPROTECTID
+
