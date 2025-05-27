@@ -1,5 +1,5 @@
 <?php
-
+//NOT USING THIS ANYMORE  USING .ENV
 // $pmUserName = "postmaster@squalmband.com";
 // $pmPassword = "Web1212Squa!@!@";
 

@@ -13,16 +13,32 @@ function generateToken()
 
 require 'includes/paths.inc.php';
 require 'includes/dbh.inc.php';
-include 'includes/email_config.php';
+// include 'includes/email_config.php';
 
-// reCAPTCHA verification
-$recaptchaSecret = '6LeTWD8rAAAAAMqHRn-fsvHfekk-VRAgRGcolcod';
-$recaptchaResponse = $_POST['g-recaptcha-response'];
+// Load Composer's autoloader
+require 'vendor/autoload.php';
 
+// Load environment variables from .env
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
+// Determine environment
+$env = $_ENV['APP_ENV'] ?? 'production';
+
+// Select appropriate reCAPTCHA secret key
+$recaptchaSecret = $env === 'development'
+    ? $_ENV['RECAPTCHA_SECRET_KEY_DEV']
+    : $_ENV['RECAPTCHA_SECRET_KEY_PROD'];
+
+// Get reCAPTCHA response from form
+$recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+
+// Validate reCAPTCHA
 $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
 $responseData = json_decode($verify);
 
-if (!$responseData->success) {
+// Handle failure
+if (!$responseData || !$responseData->success) {
     exit("reCAPTCHA verification failed.");
 }
 
@@ -45,10 +61,11 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
     exit("Invalid email format");
 }
 
-require "vendor/autoload.php";
+// require 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 
 $mail = new PHPMailer(true);
 
@@ -59,11 +76,16 @@ $mail->isHTML(true);
 $mail->SMTPAuth = true;
 $mail->Host = "smtp.titan.email";
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-$mail->Port = 465;
-$mail->Username = $pmUserName;
-$mail->Password = $pmPassword;
+// $mail->Port = 465;
+$mail->Port = $_ENV['SMTP_PORT'];
+// $mail->Username = $pmUserName;
+$mail->Username = $_ENV['SMTP_USERNAME'];
+// $mail->Password = $pmPassword;
+$mail->Password = $_ENV['SMTP_PASSWORD'];
 // $mail->setFrom("postmaster@squalmband.com", "Postmaster at Squalmband"); 
-$mail->setFrom("postmaster@hollyschu.com", "Postmaster at Squalmband (hollyschu)");
+// $mail->setFrom("postmaster@hollyschu.com", "Postmaster at Squalmband (hollyschu)");
+$mail->setFrom($_ENV['FROM_EMAIL'], $_ENV['FROM_NAME']);
+
 $headers = "From: no-reply@squalmband.com";
 $confirmationLink = "https://squalmband.com/pages/confirm.php?token=" . $token;
 

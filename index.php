@@ -94,7 +94,7 @@ $tourData = getTourdata($conn);
                 <div class="contact-container">
                     <h1>Contact</h1>
                     <div class="contact-info">
-                        <form method="post" action="./includes/email.inc.php" method="POST" onsubmit="showSendingMessage()">
+                        <form method="post" action="send-email.php" method="POST" onsubmit="showSendingMessage()">
                             <div class="form-group">
                                 <label for="fname">First Name</label>
                                 <input type="text" name="fname" id="fname" required />
@@ -118,7 +118,7 @@ $tourData = getTourdata($conn);
                             <div class="form-group"><label for="message">Message</label>
                                 <textarea name="message" id="message"></textarea>
                             </div>
-                            <div class="g-recaptcha" data-sitekey="6LeTWD8rAAAAAITEogc875-TCAA0noJZOwRQkSc-"></div>
+                            <div class="g-recaptcha" data-sitekey="<?= htmlspecialchars($recaptchaSiteKey) ?>"></div>
                             <div class="form-group">
                                 <button type="submit" name="submit">Send</button>
                             </div>
