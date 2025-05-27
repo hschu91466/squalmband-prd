@@ -8,5 +8,6 @@ email_errors.log
 vendor/
 .env
 .htpasswd
-.env
-**/.htaccess
+/admin/includes/dbh.inc.php
+/admin/includes/.htaccess
+/admin/includes/email_config.php
