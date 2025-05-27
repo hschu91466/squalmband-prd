@@ -9,3 +9,4 @@ vendor/
 .env
 .htpasswd
 .env
+**/.htaccess
