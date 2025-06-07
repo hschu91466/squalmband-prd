@@ -1,11 +1,16 @@
 <?php
 include_once 'includes/init.inc.php';
 
-$featuredVideo = getFeaturedVideo($conn);
-$streamVideo = getStreamVideo($conn);
-$allVideos = getAllVideos($conn);
-$latestNews = getNews($conn);
-$tourData = getTourdata($conn);
+// $featuredVideo = getFeaturedVideo($conn);
+// $streamVideo = getStreamVideo($conn);
+// $allVideos = getAllVideos($conn);
+// $latestNews = getNews($conn);
+// $tourData = getTourdata($conn);
+$featuredVideo = getFeaturedVideo($mysqli);
+$streamVideo = getStreamVideo($mysqli);
+$allVideos = getAllVideos($mysqli);
+$latestNews = getNews($mysqli);
+$tourData = getTourdata($mysqli);
 ?>
 
 <body>
@@ -94,7 +99,7 @@ $tourData = getTourdata($conn);
                 <div class="contact-container">
                     <h1>Contact</h1>
                     <div class="contact-info">
-                        <form method="post" action="send-email.php" method="POST" onsubmit="showSendingMessage()">
+                        <form action="send-email.php" method="POST" onsubmit="showSendingMessage()">
                             <div class="form-group">
                                 <label for="fname">First Name</label>
                                 <input type="text" name="fname" id="fname" required />
@@ -119,6 +124,11 @@ $tourData = getTourdata($conn);
                                 <textarea name="message" id="message"></textarea>
                             </div>
                             <div class="g-recaptcha" data-sitekey="<?= htmlspecialchars($recaptchaSiteKey) ?>"></div>
+
+                            <script>
+                                console.log("Using reCAPTCHA site key: <?= $recaptchaSiteKey ?>");
+                            </script>
+
                             <div class="form-group">
                                 <button type="submit" name="submit">Send</button>
                             </div>

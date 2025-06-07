@@ -4,43 +4,43 @@
 <?php
 // queries.php
 
-function getFeaturedVideo($conn)
+function getFeaturedVideo($mysqli)
 {
     $featured = 'intro';
-    $stmt = $conn->prepare("SELECT * FROM videos WHERE featured = ?");
+    $stmt = $mysqli->prepare("SELECT * FROM videos WHERE featured = ?");
     $stmt->bind_param("s", $featured);
     $stmt->execute();
     return $stmt->get_result();
 }
 
-function getStreamVideo($conn)
+function getStreamVideo($mysqli)
 {
     $featured = 'stream';
-    $stmt = $conn->prepare("SELECT * FROM videos WHERE featured = ?");
+    $stmt = $mysqli->prepare("SELECT * FROM videos WHERE featured = ?");
     $stmt->bind_param("s", $featured);
     $stmt->execute();
     return $stmt->get_result();
 }
 
-function getAllVideos($conn)
+function getAllVideos($mysqli)
 {
     $featured = 'video';
-    $stmt = $conn->prepare("SELECT * FROM videos WHERE featured = ? ORDER BY vid DESC");
+    $stmt = $mysqli->prepare("SELECT * FROM videos WHERE featured = ? ORDER BY vid DESC");
     $stmt->bind_param("s", $featured);
     $stmt->execute();
     return $stmt->get_result();
 }
 
-function getNews($conn)
+function getNews($mysqli)
 {
-    $stmt = $conn->prepare("SELECT * FROM news");
+    $stmt = $mysqli->prepare("SELECT * FROM news");
     $stmt->execute();
     return $stmt->get_result();
 }
 
-function getTourdata($conn)
+function getTourdata($mysqli)
 {
-    $stmt = $conn->prepare("SELECT * FROM tour where tour_time >= CURDATE()");
+    $stmt = $mysqli->prepare("SELECT * FROM tour where tour_time >= CURDATE()");
     $stmt->execute();
     return $stmt->get_result();
 }

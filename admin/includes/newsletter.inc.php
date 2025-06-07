@@ -1,6 +1,5 @@
 <?php
-require 'dbh.inc.php';
-require 'paths.inc.php';
+require_once __DIR__ . '/../../includes/init.inc.php';
 include 'email_config.php';
 
 if (isset($_POST['delete'])) {
@@ -36,7 +35,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-session_start();
+// session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $subject = htmlspecialchars($_POST['subject']);
@@ -44,11 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Fetch email addresses and first names from the signup table
     $sql_signup = "SELECT signup_email, signup_fname FROM signup where confirmed = 1";
-    $result_signup = $conn->query($sql_signup);
+    $result_signup = $mysqli->query($sql_signup);
 
     // Fetch tour dates and locations from the tour table
     $sql_tour = "SELECT tourdate, DATE_FORMAT(tour_time, '%M %d, %Y %r') AS formatted_tour_time, venue, location FROM tour where tour_time >= CURDATE()";
-    $result_tour = $conn->query($sql_tour);
+    $result_tour = $mysqli->query($sql_tour);
 
     $include_tour_dates = isset($_POST['include_tour_dates']) ? true : false;
 
@@ -128,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<script>console.log('No subscribers found.');</script>";
     }
 
-    $conn->close();
+    $mysqli->close();
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
 } else {

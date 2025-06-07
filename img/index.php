@@ -99,7 +99,7 @@ include_once 'includes/paths.inc.php';
                 <h1>Now Playing</h1>
                 <?php
                 $sql = "SELECT * FROM tour;";
-                $result = mysqli_query($conn, $sql);
+                $result = mysqli_query($mysqli, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 if ($resultCheck > 0) {
                     while ($row = $result->fetch_assoc()) : ?>

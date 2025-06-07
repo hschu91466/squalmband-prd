@@ -1,8 +1,7 @@
 <?php
-require 'dbh.inc.php';
-require 'paths.inc.php';
+require_once __DIR__ . '/../../includes/init.inc.php';
 
-session_start();
+// session_start();
 
 $id = 0;
 $update = false;
@@ -46,7 +45,9 @@ if (isset($_POST['save'])) {
         $fileActualExt = strtolower(end($fileExt));
 
         $allowed = array(
-            'jpg', 'jpeg', 'png'
+            'jpg',
+            'jpeg',
+            'png'
         );
 
         if (in_array($fileActualExt, $allowed)) {
@@ -111,7 +112,9 @@ if (isset($_POST['update'])) {
         $fileActualExt = strtolower(end($fileExt));
 
         $allowed = array(
-            'jpg', 'jpeg', 'png'
+            'jpg',
+            'jpeg',
+            'png'
         );
 
         if (in_array($fileActualExt, $allowed)) {

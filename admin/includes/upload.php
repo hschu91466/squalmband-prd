@@ -1,6 +1,5 @@
 <?php
-include_once "paths.inc.php";
-
+require_once __DIR__ . '/../../includes/init.inc.php';
 
 if (isset($_POST['submit'])) {
     $file = $_FILES['file'];

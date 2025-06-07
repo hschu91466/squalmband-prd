@@ -1,7 +1,8 @@
 <?php
-include_once './includes/dbh.inc.php';
-include_once './includes/paths.inc.php';
-include_once './includes/header.inc.php';
+require_once __DIR__ . '/../includes/init.inc.php';
+// include_once './includes/dbh.inc.php';
+// include_once './includes/paths.inc.php';
+// include_once './includes/header.inc.php';
 include_once './includes/navbar.inc.php';
 include_once './includes/music-process.php';
 ?>
@@ -20,7 +21,7 @@ include_once './includes/music-process.php';
 
         <?php
 
-        $result = $conn->query("SELECT * FROM videos") or die($mysqli->error);
+        $result = $mysqli->query("SELECT * FROM videos") or die($mysqli->error);
         // pre_r($result);
         ?>
 
@@ -35,7 +36,7 @@ include_once './includes/music-process.php';
 
         <!-- Create update form -->
         <div id="newVideo" class="music-container justify-content-center">
-            <form class="music-form" action="includes/process.php" method="POST">
+            <form class="music-form" action="includes/music-process.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="form-group fg2">
                     <label for="title">Video Title</label>

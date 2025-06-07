@@ -15,7 +15,7 @@ include_once '../includes/init.inc.php';
         if (isset($_POST['confirm'])) {
             // Remove email from the database
             $sql = "DELETE FROM signup WHERE signup_email = ?";
-            $stmt = $conn->prepare($sql);
+            $stmt = $mysqli->prepare($sql);
             $stmt->bind_param("s", $email);
 
             if ($stmt->execute()) {
@@ -25,7 +25,7 @@ include_once '../includes/init.inc.php';
             }
 
             $stmt->close();
-            $conn->close();
+            $mysqli->close();
         } else {
             // Display confirmation message
             echo "<p>Are you sure you want to unsubscribe?</p>";

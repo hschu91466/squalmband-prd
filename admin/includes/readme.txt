@@ -4,3 +4,4 @@
 </div>
 
 Above added  to index.php to avoid spam.  Has a standard name so as not to alert spammer.
+.htaccesss has been renamed on purpose!!  Leave it.

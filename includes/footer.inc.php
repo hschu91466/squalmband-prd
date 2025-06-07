@@ -1,5 +1,5 @@
 <?php
-require 'paths.inc.php';
+require_once __DIR__ . '\init.inc.php';
 ?>
 <footer class="footer section-container">
     <p class="copyright">&copy; 2023 SQUALM- Garage-Jazz. All Rights Reserved.</p>

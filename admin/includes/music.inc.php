@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?php echo $path . 'css/iframe.css' ?>" />
 
 <?php
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($mysqli, $sql);
 $resultCheck = mysqli_num_rows($result); ?>
 <div class="music-container">
     <?php if ($resultCheck > 0)

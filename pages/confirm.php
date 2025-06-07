@@ -7,7 +7,7 @@ ob_start();
 //token verification and confirmation logic
 $token = $_GET['token'];
 
-$stmt = $conn->prepare("SELECT signup_email FROM signup WHERE token = ? AND confirmed = 0");
+$stmt = $mysqli->prepare("SELECT signup_email FROM signup WHERE token = ? AND confirmed = 0");
 $stmt->bind_param("s", $token);
 $stmt->execute();
 $stmt->store_result();
@@ -15,7 +15,7 @@ $stmt->store_result();
 if ($stmt->num_rows > 0) {
     $stmt->close();
 
-    $stmt = $conn->prepare("UPDATE signup SET confirmed = 1 WHERE token = ?");
+    $stmt = $mysqli->prepare("UPDATE signup SET confirmed = 1 WHERE token = ?");
     $stmt->bind_param("s", $token);
     $stmt->execute();
     $message = "Email confirmed! Thank you for subscribing.";
@@ -24,7 +24,7 @@ if ($stmt->num_rows > 0) {
 }
 
 $stmt->close();
-$conn->close();
+$mysqli->close();
 
 // Set the header for redirection
 header("refresh:3;url=" . $path);

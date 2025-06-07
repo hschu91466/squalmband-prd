@@ -1,9 +1,13 @@
 <?php
-include_once './includes/dbh.inc.php';
-include_once './includes/paths.inc.php';
+require_once __DIR__ . '/../includes/init.inc.php';
 include_once './includes/header.inc.php';
 include_once './includes/navbar.inc.php';
+
+// include_once './includes/dbh.inc.php';
+// include_once './includes/paths.inc.php';
+
 include_once './includes/tours-process.php';
+
 
 ?>
 
@@ -23,7 +27,7 @@ include_once './includes/tours-process.php';
 
             <?php
 
-            $result = $conn->query("SELECT * FROM tour") or die($mysqli->error);
+            $result = $mysqli->query("SELECT * FROM tour") or die($mysqli->error);
             // pre_r($result);
             ?>
 
