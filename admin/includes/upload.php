@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/../../includes/init.inc.php';
 
+// $doc_path = $_SERVER['DOCUMENT_ROOT'];
+
 if (isset($_POST['submit'])) {
     $file = $_FILES['file'];
 
@@ -9,8 +11,6 @@ if (isset($_POST['submit'])) {
     $fileSize = $_FILES['file']['size'];
     $fileError = $_FILES['file']['error'];
     $fileType = $_FILES['file']['type'];
-
-
 
     $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
@@ -21,12 +21,10 @@ if (isset($_POST['submit'])) {
         if ($fileError === 0) {
             if ($fileSize < 15000000) {
                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-                // $fileDestination = $path . 'img/' . $fileNameNew;
                 $fileDestination = $doc_path . $fileNameNew;
 
-                echo $path . 'img/' . $fileNameNew;
+                echo $doc_path . 'img/' . $fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
-                // header("location: " . $path . "admin/news.php?uploadsuccess");
             } else {
                 echo "Your file is too large!";
             }

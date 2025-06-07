@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../../includes/init.inc.php';
-include_once './includes/navbar.inc.php';
+require_once 'navbar.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,13 +23,13 @@ include_once './includes/navbar.inc.php';
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="<?php echo $path . 'admin/css/admin.css' ?>" />
+  <link rel="stylesheet" href="<?php echo $basePath . 'admin/css/admin.css' ?>" />
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/svg" href="<?php echo $path . 'img/jozaylogo3.svg' ?>" />
+  <link rel="icon" type="image/svg" href="<?php echo $imgPath . 'jozaylogo3.svg' ?>" />
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <script src="<?php echo $path . 'admin/js/admin.js' ?>"></script>
+  <script src="<?php echo $basePath . 'admin/js/admin.js' ?>"></script>
 </head>

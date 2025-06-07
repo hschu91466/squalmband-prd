@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $path . 'css/iframe.css' ?>" />
+<link rel="stylesheet" href="<?php echo $basePath . 'css/iframe.css' ?>" />
 
 <?php
 $result = mysqli_query($mysqli, $sql);

@@ -1,11 +1,6 @@
 <?php
 include_once 'includes/init.inc.php';
 
-// $featuredVideo = getFeaturedVideo($conn);
-// $streamVideo = getStreamVideo($conn);
-// $allVideos = getAllVideos($conn);
-// $latestNews = getNews($conn);
-// $tourData = getTourdata($conn);
 $featuredVideo = getFeaturedVideo($mysqli);
 $streamVideo = getStreamVideo($mysqli);
 $allVideos = getAllVideos($mysqli);
@@ -22,7 +17,7 @@ $tourData = getTourdata($mysqli);
     <main id="main-content">
         <section id="intro" class="intro hero section-container">
             <video class="video_bg" autoplay loop muted plays-inline>
-                <source src="<?php echo $path . '/img/boyz8.mp4' ?>" type="video/mp4">
+                <source src="<?php echo $imgPath . 'boyz8.mp4' ?>" type="video/mp4">
             </video>
             <!-- <div class="section-content"> -->
             <div class="intro-container">
@@ -85,7 +80,7 @@ $tourData = getTourdata($mysqli);
         <section id="news" class="news section-container">
             <div class="news-container">
                 <h1>News</h1>
-                <?php displayNews($latestNews, $path); ?>
+                <?php displayNews($latestNews, $basePath); ?>
             </div>
         </section>
         <section id="tour" class="tour section-container">

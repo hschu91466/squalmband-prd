@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     echo "This worked";
 }
 ?>
-<link rel="stylesheet" href="<?php echo $path . 'css/iframe.css' ?>" />
+<link rel="stylesheet" href="<?php echo $basePath . 'css/iframe.css' ?>" />
 
 <style>
 

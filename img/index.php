@@ -13,7 +13,7 @@ include_once 'includes/paths.inc.php';
     <main id="main-content">
         <section id="intro" class="intro hero section-container">
             <video class="video_bg" autoplay loop muted plays-inline>
-                <source src="<?php echo $path . '/img/boyz8.mp4' ?>" type="video/mp4">
+                <source src="<?php echo $basePath . '/img/boyz8.mp4' ?>" type="video/mp4">
             </video>
             <!-- <div class="section-content"> -->
             <div class="intro-container">

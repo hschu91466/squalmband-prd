@@ -22,10 +22,10 @@ if (isset($_GET['add'])) {
 // Add Music (Save button)
 if (isset($_POST['save'])) {
 
-    saveMusic($mysqli, $sql, $path);
+    saveMusic($mysqli, $sql, $basePath);
 }
 
-function saveMusic($mysqli, $sql, $path)
+function saveMusic($mysqli, $sql, $basePath)
 {
     $title = str_replace("'", "&#039;", $_POST['title']);
     $description = $_POST['description'];
@@ -40,7 +40,7 @@ function saveMusic($mysqli, $sql, $path)
     $_SESSION['msg_type'] = "success";
 
     if (mysqli_query($mysqli, $sql)) {
-        header("location: " . $path . "admin/");
+        header("location: " . $basePath . "admin/");
     }
 }
 
@@ -60,7 +60,7 @@ if (isset($_POST['update'])) {
     $_SESSION['message'] = "Record has been updated!";
     $_SESSION['msg_type'] = "warning";
 
-    header("location: " . $path . "admin/");
+    header("location: " . $basePath . "admin/");
 }
 
 if (isset($_GET['edit'])) {

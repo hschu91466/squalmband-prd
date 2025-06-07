@@ -1,5 +1,5 @@
 <?php require 'paths.inc.php'; ?>
-<link rel="stylesheet" href="<?php echo $path . 'css/iframe.css' ?>" />
+<link rel="stylesheet" href="<?php echo $basePath . 'css/iframe.css' ?>" />
 
 <?php
 // queries.php
@@ -105,18 +105,18 @@ function newsVid($row)
     }
 }
 
-function newsImg($row, $path)
+function newsImg($row, $basePath)
 {
     ?>
     <div class="news-item <?php echo $row['section']; ?>">
         <div class="news_media">
-            <?php if (strpos($path, 'squalmband.com') !== false) : ?>
-                <img src="<?php echo $path . 'img/' . $row['img_path']; ?>" alt="" />
+            <?php if (strpos($basePath, 'squalmband.com') !== false) : ?>
+                <img src="<?php echo $basePath . 'img/' . $row['img_path']; ?>" alt="" />
                 <script>
                     console.log('Image Link');
                 </script>
             <?php else : ?>
-                <img src="<?php echo $path . 'img/651db995bdda68.32093186.jpg'; ?>" alt="">
+                <img src="<?php echo $basePath . 'img/651db995bdda68.32093186.jpg'; ?>" alt="">
                 <script>
                     console.log("Whatever");
                 </script>
@@ -133,7 +133,7 @@ function newsImg($row, $path)
     <?php
 }
 
-function displayNews($result, $path)
+function displayNews($result, $basePath)
 {
     while ($row = $result->fetch_assoc()): ?>
         <?php $section = $row['section']; ?>
@@ -159,7 +159,7 @@ function displayNews($result, $path)
             <?php endif ?>
 
             <?php if ($row['media_type'] == 'image') : ?>
-                <?php newsImg($row, $path); ?>
+                <?php newsImg($row, $basePath); ?>
 
                 <script>
                     console.log('Hi There');

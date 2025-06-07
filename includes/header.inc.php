@@ -1,5 +1,5 @@
 <?php
-require 'paths.inc.php';
+require_once __DIR__ . '/init.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +23,10 @@ require 'paths.inc.php';
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="<?php echo $path . 'css/main.css' ?>" timestamp="<?php echo $timestamp  ?> " />
+  <link rel="stylesheet" href="<?php echo $basePath . 'css/main.css' ?>" timestamp="<?php echo $timestamp  ?> " />
 
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/svg" href="<?php echo $path . 'img/jozaylogo3.svg' ?>" />
+  <link rel="icon" type="image/svg" href="<?php echo $imgPath . 'jozaylogo3.svg' ?>" />
 </head>

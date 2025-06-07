@@ -27,13 +27,13 @@ $stmt->close();
 $mysqli->close();
 
 // Set the header for redirection
-header("refresh:3;url=" . $path);
+header("refresh:3;url=" . $basePath);
 
 // End output buffering and flush output
 ob_end_flush();
 ?>
 
-<link rel="stylesheet" href="<?php echo $path . 'css/unsubscribe.css' ?>" />
+<link rel="stylesheet" href="<?php echo $basePath . 'css/unsubscribe.css' ?>" />
 <header id="header" class="main-banner">
     <?php include_once '../includes/nav.inc.php'; ?>
 </header>

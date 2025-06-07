@@ -4,7 +4,7 @@
 
     <?php
     if (stripos($_SERVER['REQUEST_URI'], 'pages')) {
-        $newPath = $path;
+        $newPath = $basePath;
         $navClass = "";
     } else {
         $newPath = "";

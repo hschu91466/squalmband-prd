@@ -3,8 +3,10 @@
 $hostKey = strtoupper(str_replace(['.', ':'], ['_', '_'], $_SERVER['HTTP_HOST']));
 $envKey = "BASE_URL_" . $hostKey;
 
-$path = $_ENV[$envKey] ?? null;
+$basePath = $_ENV[$envKey] ?? '/ Sites / production / squalmband - prd /';
+$imgPath = rtrim($basePath, '/') . '/img/';
 
-if (!$path) {
-    $path = 'Houston, we have a problem!';
-}
+
+// if (!$basePath) {
+//     $basePath = '/Sites/production/squalmband-prd/';
+// }

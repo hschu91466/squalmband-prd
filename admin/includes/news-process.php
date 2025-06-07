@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__ . '/../../includes/init.inc.php';
 
-// session_start();
-
 $id = 0;
 $update = false;
 $showForm = false;
@@ -56,7 +54,7 @@ if (isset($_POST['save'])) {
                     $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                     $fileDestination = $doc_path . $fileNameNew;
 
-                    echo $path . 'img/' . $fileNameNew;
+                    echo $basePath . 'img/' . $fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
                     ini_set("display_errors", "1");
                     ini_set('display_startup_errors', 1);
@@ -74,7 +72,7 @@ if (isset($_POST['save'])) {
                     $_SESSION['msg_type'] = "success";
 
                     if (mysqli_query($mysqli, $sql)) {
-                        header("location: " . $path . "admin/news.php");
+                        header("location: " . $basePath . "admin/news.php");
                     }
                 } else {
                     echo "Your file is too large!";
@@ -123,7 +121,7 @@ if (isset($_POST['update'])) {
                     $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                     $fileDestination = $doc_path . $fileNameNew;
 
-                    echo $path . 'img/' . $fileNameNew;
+                    echo $basePath . 'img/' . $fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
                     $img_path = $fileNameNew;
                 } else {
@@ -142,7 +140,7 @@ if (isset($_POST['update'])) {
     $_SESSION['message'] = "Record has been updated!";
     $_SESSION['msg_type'] = "warning";
 
-    header("location: " . $path . "admin/news.php");
+    header("location: " . $basePath . "admin/news.php");
 }
 
 if (isset($_GET['edit'])) {

@@ -91,7 +91,7 @@ include_once './includes/music-process.php';
                         <th>Section</th>
                         <th>Cover</th>
                         <th colspan="2">
-                            <!-- <a href="<?php echo $path . 'admin/index.php#newVideo' ?>" class="btn btn-primary" id="addVideo" name="add">Add Link</a> -->
+                            <!-- <a href="<?php echo $basePath . 'admin/index.php#newVideo' ?>" class="btn btn-primary" id="addVideo" name="add">Add Link</a> -->
                         </th>
                     </tr>
                 </thead>

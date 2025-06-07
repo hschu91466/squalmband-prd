@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ob_start();
 
-require_once __DIR__ . '\init.inc.php';
+require_once __DIR__ . '/init.inc.php';
 
 function generateToken()
 {
@@ -177,8 +177,8 @@ try {
 // Convert newlines to <br> tags
 $sentMsg = nl2br(htmlspecialchars($sentMsg));
 
-// header("Location: " . $path . "/pages/sent.php");
-header("Location: " . $path . "/pages/sent.php?message=" . urlencode($sentMsg));
+// header("Location: " . $basePath . "/pages/sent.php");
+header("Location: " . $basePath . "/pages/sent.php?message=" . urlencode($sentMsg));
 exit();
 
 ob_end_flush();

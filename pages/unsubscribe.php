@@ -1,7 +1,7 @@
 <?php
 include_once '../includes/init.inc.php';
 ?>
-<link rel="stylesheet" href="<?php echo $path . 'css/unsubscribe.css' ?>" />
+<link rel="stylesheet" href="<?php echo $basePath . 'css/unsubscribe.css' ?>" />
 <header id="header" class="main-banner">
     <?php
     include_once '../includes/nav.inc.php';

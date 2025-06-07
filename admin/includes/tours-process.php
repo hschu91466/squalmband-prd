@@ -42,7 +42,7 @@ if (isset($_POST['save'])) {
         $_SESSION['msg_type'] = "success";
 
         if (mysqli_query($mysqli, $sql)) {
-            header("location: " . $path . "admin/tourdates.php");
+            header("location: " . $basePath . "admin/tourdates.php");
         }
     }
 }
@@ -62,7 +62,7 @@ if (isset($_POST['update'])) {
     $_SESSION['message'] = "Record has been updated!";
     $_SESSION['msg_type'] = "warning";
 
-    header("location: " . $path . "admin/tourdates.php");
+    header("location: " . $basePath . "admin/tourdates.php");
 }
 
 if (isset($_GET['edit'])) {
