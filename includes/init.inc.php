@@ -24,14 +24,13 @@ $recaptchaSecretKey = $isLocalhost ? $_ENV['RECAPTCHA_SECRET_KEY_DEV'] : $_ENV['
 // Project Files
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'dbh.inc.php'; // Ensure this is included first
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'paths.inc.php';
-// require_once __DIR__ . DIRECTORY_SEPARATOR . 'header.inc.php';
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'queries.inc.php';
 
 
 // Include the correct header based on path
 $scriptPath = str_replace('\\', '/', $_SERVER['SCRIPT_FILENAME']); // Normalize slashes for Windows
 if (strpos($scriptPath, '/admin/') !== false) {
-    require_once __DIR__ . '/../admin/includes/header.inc.php';
+    require_once __DIR__ . '/../admin/includes/header-admin.inc.php';
 } else {
     require_once __DIR__ . '/header.inc.php';
 }

@@ -1,9 +1,5 @@
 <?php
 require_once __DIR__ . '/../includes/init.inc.php';
-// include_once './includes/dbh.inc.php';
-// include_once './includes/paths.inc.php';
-// include_once './includes/header.inc.php';
-include_once './includes/navbar.inc.php';
 include_once './includes/music-process.php';
 ?>
 <div class="container">

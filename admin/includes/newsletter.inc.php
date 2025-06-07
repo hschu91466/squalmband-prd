@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/../../includes/init.inc.php';
-include 'email_config.php';
 
 if (isset($_POST['delete'])) {
     $email = $_POST['email'];
@@ -93,8 +92,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mail->Host = "smtp.titan.email";
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                 $mail->Port = 465;
-                $mail->Username = $pmUserName;
-                $mail->Password = $pmPassword;
+                // $mail->Username = $pmUserName;
+                // $mail->Password = $pmPassword;
+                $mail->Username = $_ENV['SMTP_USERNAME'];
+                $mail->Password = $_ENV['SMTP_PASSWORD'];
                 // $mail->setFrom("postmaster@squalmband.com", "Postmaster at Squalmband");
                 $mail->setFrom("postmaster@hollyschu.com", "Postmaster at Squalmband");
                 $mail->addAddress($row_signup['signup_email']);
